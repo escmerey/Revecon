@@ -1,15 +1,13 @@
-// Fonts
 @import 'fonts';
-// Reset html styles
 @import 'reset';
-// Reveal
 @import 'modal';
+@import 'animate';
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ plugin ~~~~~~~~~~~~~~~~~~~~~~~~*/
 @import '../vendor/lightgallery/css/lightgallery.min';
 @import '../vendor/lightslider/css/lightslider.min';
 @import '../vendor/nice-select/nice-select';
 @import '../vendor/perfect-scrollbar/css/main';
-@import '../vendor/swiper-slider/css/swiper.min.css';
+@import '../vendor/swiper-slider/css/swiper.min';
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ variable ~~~~~~~~~~~~~~~~~~~~~~~~*/
 $red: #d91907;
@@ -106,7 +104,8 @@ b {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ global block ~~~~~~~~~~~~~~~~~~~~~~~~*/
-.wrapper {
+.animated {
+	transition-duration: 0.5s;
 }
 
 .b_center {
@@ -1600,6 +1599,26 @@ a.btn {
 		background-position: center center;
 		border-radius: 8px;
 		cursor: pointer !important;
+		position: relative;
+		&:hover {
+			&:after {
+				opacity: 0.4;
+				content: '';
+				background-size: 10% auto;
+			}
+		}
+		&:after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			transition: 0.2s all;
+			content: '';
+			background: #131a32 url('../images/ico/search.svg') center center no-repeat;
+			background-size: 50% auto;
+			opacity: 0;
+		}
 	}
 	.lSPager {
 		max-width: none;
@@ -1710,16 +1729,28 @@ a.btn {
 		@media screen and (max-width: 720px) {
 			width: 50%;
 		}
+		@media screen and (min-width: 1025px) {
+			&:hover {
+				.steps__ico, .steps__text {
+					transform: translateX(10px);
+				}
+				+ .steps__hr {
+					transform: translateX(10px);
+				}
+			}
+		}
 	}
 	&__ico {
 		margin-bottom: 10px;
 		height: 60px;
 		display: flex;
+		transition: 0.2s all;
 		align-items: center;
 	}
 	&__text {
 		text-align: center;
 		font-weight: 700;
+		transition: 0.2s all;
 		text-transform: uppercase;
 	}
 	&__hr {
@@ -1727,6 +1758,7 @@ a.btn {
 		height: 1px;
 		margin-top: -35px;
 		border-bottom: 2px dotted $lgray;
+		transition: 0.2s all 0.1s;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -1902,21 +1934,24 @@ a.btn {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		&:hover {
+			&:after {
+				opacity: 0.4;
+				content: '';
+				background-size: 20% auto;
+			}
+		}
 		&:after {
-			content: '';
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 100%;
-			background-color: rgba(0, 0, 0, 0.5);
 			height: 100%;
+			transition: 0.2s all;
+			content: '';
+			background: #131a32 url('../images/ico/search.svg') center center no-repeat;
+			background-size: 50% auto;
 			opacity: 0;
-			transition: 0.3s all;
-		}
-		&:hover {
-			&:after {
-				opacity: .5;
-			}
 		}
 		img {
 			width: 100%;

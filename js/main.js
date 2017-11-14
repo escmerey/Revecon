@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
-    $("input[type='tel']").each(function() {
-        $(this).mask("+799999999999999999",{
-            placeholder:"",
+    $("input[type='tel']").each(function () {
+        $(this).mask("+799999999999999999", {
+            placeholder: "",
             autoclear: false
         });
     });
@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
     $('.form input').on('change', function () {
         if ($(this).val() != '') {
             $(this).parent().find('.form__input__text').addClass('focus');
-        }else{
+        } else {
             $(this).parent().find('.form__input__text').removeClass('focus')
         }
     });
@@ -39,6 +39,7 @@ jQuery(document).ready(function ($) {
         thumbItem: 5,
         slideMargin: 15,
         enableDrag: false,
+        enableTouch: false,
         currentPagerPosition: 'middle',
         controls: false,
         thumbMargin: 15,
@@ -161,11 +162,15 @@ jQuery(document).ready(function ($) {
         }
     });
 
-
-
     $('.aside__toggle').on('click', function (event) {
         $(this).toggleClass('active').next('.aside__wrap').toggleClass('visible');
     });
+
+    var wow = new WOW({
+        offset: 300,
+        mobile: false,
+    });
+    wow.init();
 
     if ($('.map_canvas').length) {
         mapInitialize();

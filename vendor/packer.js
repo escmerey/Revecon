@@ -9,3 +9,4 @@
 //@prepros-append lightslider/js/lightslider.min.js
 //@prepros-append jquery.jplayer.min.js
 //@prepros-append readmore.min.js
+//@prepros-append wow.min.js
