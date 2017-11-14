@@ -104,6 +104,10 @@ b {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ global block ~~~~~~~~~~~~~~~~~~~~~~~~*/
+.wrapper{
+	overflow: hidden;
+}
+
 .animated {
 	transition-duration: 0.5s;
 }
@@ -1383,8 +1387,12 @@ a.btn {
 		display: flex;
 		text-align: center;
 		flex-direction: column;
+		transition: 0.3s all;
 		@media screen and (max-width: 998px) {
 			padding: 20px;
+		}
+		&:hover {
+			box-shadow: 0 6px 34px rgba(77, 87, 115, 0.3);
 		}
 	}
 	&__title {
@@ -1550,12 +1558,14 @@ a.btn {
 		&__right {
 			padding-left: 25px;
 			display: flex;
+			width: 40%;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			text-align: center;
 			@media screen and (max-width: 720px) {
 				padding-left: 0;
+				width: 100%;
 			}
 			p {
 				line-height: 18px;
@@ -1807,6 +1817,7 @@ a.btn {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 33.33%;
 		@media screen and (max-width: 720px) {
 			padding: 15px 10px;
 		}

@@ -30,6 +30,9 @@ jQuery(document).ready(function ($) {
             el: '.swiper-pagination',
             clickable: true
         },
+        autoplay: {
+            delay: 4000
+        }
     });
 
     $('.task__slider').lightSlider({
@@ -105,6 +108,9 @@ jQuery(document).ready(function ($) {
                 slidesPerView: 2,
                 spaceBetween: 10,
             }
+        },
+        autoplay: {
+            delay: 4000
         }
     });
 
@@ -132,6 +138,9 @@ jQuery(document).ready(function ($) {
                 slidesPerGroup: 1,
                 spaceBetween: 10,
             }
+        },
+        autoplay: {
+            delay: 4000
         }
     });
 
@@ -159,6 +168,9 @@ jQuery(document).ready(function ($) {
                 slidesPerGroup: 1,
                 spaceBetween: 10,
             }
+        },
+        autoplay: {
+            delay: 4000
         }
     });
 
