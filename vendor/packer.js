@@ -1,0 +1,11 @@
+//@prepros-append jquery-3.2.1.min.js
+//@prepros-append jquery-ui.min.js
+//@prepros-append jquery.validate.js
+//@prepros-append jquery.maskedinput.min.js
+//@prepros-append swiper-slider/js/swiper.min.js
+//@prepros-append perfect-scrollbar/js/perfect-scrollbar.min.js
+//@prepros-append nice-select/jquery.nice-select.min.js
+//@prepros-append lightgallery/js/lightgallery-all.min.js
+//@prepros-append lightslider/js/lightslider.min.js
+//@prepros-append jquery.jplayer.min.js
+//@prepros-append readmore.min.js
