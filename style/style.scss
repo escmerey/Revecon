@@ -104,7 +104,7 @@ b {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ global block ~~~~~~~~~~~~~~~~~~~~~~~~*/
-.wrapper{
+.wrapper {
 	overflow: hidden;
 }
 
@@ -196,12 +196,8 @@ a.btn {
 	&__wrap {
 		position: relative;
 		width: 100%;
-		&:hover {
-			input {
-				border-color: darken($lgray, 20%);
-			}
-		}
-		input {
+
+		input, textarea {
 			height: 56px;
 			padding: 0 30px 0 70px;
 			width: 100%;
@@ -215,6 +211,29 @@ a.btn {
 				~ .form__input__text {
 					transform: translate(0, -27px) scale(0.7);
 					opacity: .5;
+				}
+			}
+			&:hover {
+				input {
+					border-color: darken($lgray, 20%);
+				}
+			}
+		}
+		textarea {
+			height: 100px;
+			padding: 20px 30px 20px 70px;
+			resize: none;
+			~ .form__ico {
+				top: 18px;
+				transform: none;
+			}
+			~ .form__input__text {
+				top: 20px;
+				transform: none;
+			}
+			&:focus {
+				~ .form__input__text {
+					transform: translate(0, -17px) scale(0.7);
 				}
 			}
 		}
@@ -233,12 +252,14 @@ a.btn {
 	&__input {
 		cursor: pointer;
 		width: 100%;
+		* {
+			cursor: pointer;
+		}
 		&__text {
 			position: absolute;
 			transition: 0.3s all;
 			left: 70px;
 			transform-origin: 0 50%;
-			cursor: pointer;
 			top: 50%;
 			transform: translateY(-50%);
 			@media screen and (max-width: 998px) {
@@ -373,14 +394,19 @@ a.btn {
 		counter-reset: olnum;
 		> li {
 			position: relative;
-			padding-left: 0.625em;
+			padding-left: 1.7em;
 			counter-increment: olnum;
+			margin-bottom: 1.05em;
 			font-size: 1em;
 			&:before {
-				top: 0.5em;
-				left: 0;
-				content: counter(olnum) '.';
-				font-size: 1em;
+				position: absolute;
+				font-size: 1.4em;
+				top: 0.4em;
+				left: 0.3em;
+				content: counter(olnum);
+				color: $lred;
+				transform: translateY(-50%);
+				font-weight: 900;
 			}
 		}
 	}
@@ -2548,6 +2574,33 @@ a.btn {
 			}
 		}
 	}
+	&--inner {
+		padding: 20px 0;
+		.caption {
+			text-align: center !important;
+		}
+		.works__title {
+			text-align: center;
+			display: block;
+			&:after {
+				display: none;
+			}
+		}
+		.works__item {
+			@media screen and (max-width: 720px) {
+				width: 100%;
+			}
+		}
+		.works__image{
+			height: 220px;
+			@media screen and (max-width: 998px) {
+				height: 180px;
+			}
+			@media screen and (max-width: 720px) {
+				height: 130px;
+			}
+		}
+	}
 }
 
 .contacts {
@@ -2619,6 +2672,60 @@ a.btn {
 		&:not(:last-child) {
 			margin-bottom: 30px;
 		}
+	}
+}
+
+.inner {
+	.caption {
+		text-align: left;
+	}
+}
+
+.comments {
+	margin: 35px 0 40px 0;
+	&__count {
+		font-size: 12px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: $blue;
+		border-bottom: 1px solid #e8e8f1;
+		span {
+			padding-bottom: 8px;
+			display: inline-block;
+			border-bottom: 3px solid $lred;
+			position: relative;
+			bottom: -1px;
+		}
+	}
+	.form__wrap {
+		margin-top: 20px;
+		input {
+			width: 370px;
+		}
+	}
+	&__items {
+		margin-top: 38px;
+	}
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: 38px;
+		}
+	}
+	&__name {
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	&__time {
+		color: #a2a8bc;
+	}
+	&__text {
+		margin-top: 18px;
+		line-height: 20px;
 	}
 }
 

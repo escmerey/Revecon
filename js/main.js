@@ -26,6 +26,7 @@ jQuery(document).ready(function ($) {
     });
 
     var taskWrapSwiper = new Swiper('.task__wrapslider', {
+        speed: 600,
         pagination: {
             el: '.swiper-pagination',
             clickable: true
